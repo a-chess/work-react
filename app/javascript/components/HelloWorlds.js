@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-class HelloWorld extends React.Component {
+class aaa extends React.Component {
   render () {
     return (
       <React.Fragment>
@@ -10,7 +10,7 @@ class HelloWorld extends React.Component {
   }
 }
 
-HelloWorld.propTypes = {
+aaa.propTypes = {
   greeting: PropTypes.string
 };
-export default HelloWorld
+export default aaa
