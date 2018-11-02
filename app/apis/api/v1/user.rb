@@ -15,7 +15,14 @@ module API
         end
         
         get ':id' do
-          ::User.find(params[:id])
+          user = ::User.find(params[:id])
+          # {
+          #   id: user.id,
+          #   name: user.name,
+          #   age: user.age,
+          #   email: user.email
+          # }
+
         end
 
       end
