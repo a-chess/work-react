@@ -7,6 +7,17 @@ module API
         get do
           ::User.all
         end
+
+        #ID単一取得
+        desc "return a user"
+        params do
+          requires :id, type: Integer
+        end
+        
+        get ':id' do
+          ::User.find(params[:id])
+        end
+
       end
 
     end
