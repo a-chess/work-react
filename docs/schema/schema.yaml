@@ -49,6 +49,41 @@ paths:
           description: "successful operation"
           schema:
             $ref: "#/definitions/User"
+  /books:
+    get:
+      tags:
+      - "book"
+      summary: "全てのbookを取得"
+      description: ""
+      operationId: "getAllBooks"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "成功"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Book"
+  /books/{bookId}:
+    get:
+      tags:
+      - "book"
+      summary: "指定したBookを取得"
+      description: ""
+      operationId: "getBookById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "bookId"
+        in: "path"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "成功"
+          schema:
+            $ref: "#/definitions/Book"
 definitions:
   User:
     type: "object"
@@ -66,3 +101,12 @@ definitions:
       updated_at:
         type: "string"
     additionalProperties: false
+  Book:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+      title:
+        type: "string"
+      author:
+        type: "string"
