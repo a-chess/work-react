@@ -1,43 +1,55 @@
 {
   "swagger": "2.0",
   "info": {
+    "description": "description",
     "version": "1.0.0",
-    "title": "Committee Rails Sample",
-    "license": {
-      "name": "MIT"
-    }
+    "title": "Swagger Petstore"
   },
-  "host": "example.com",
+  "host": "petstore.swagger.io",
   "basePath": "/api/v1",
-  "schemes": [
-    "http"
-  ],
   "consumes": [
     "application/json"
   ],
   "produces": [
     "application/json"
   ],
+  "tags": [
+    {
+      "name": "user",
+      "description": "about user",
+      "externalDocs": {
+        "description": "Find out more about our store",
+        "url": "http://swagger.io"
+      }
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
   "paths": {
     "/users/{userId}": {
       "get": {
-        "summary": "get users",
-        "operationId": "userShow",
         "tags": [
-          "users"
+          "user"
+        ],
+        "summary": "Get user by user name",
+        "description": "",
+        "operationId": "getUserById",
+        "produces": [
+          "application/xml",
+          "application/json"
         ],
         "parameters": [
           {
             "name": "userId",
             "in": "path",
-            "description": "user ID",
             "required": true,
-            "type": "string"
+            "type": "integer"
           }
         ],
         "responses": {
           "200": {
-            "description": "A user",
+            "description": "successful operation",
             "schema": {
               "$ref": "#/definitions/User"
             }
@@ -48,34 +60,21 @@
   },
   "definitions": {
     "User": {
-      "required": [
-        "id",
-        "email",
-        "name",
-        "created_at",
-        "updated_at"
-      ],
+      "type": "object",
       "properties": {
         "id": {
           "type": "integer"
         },
-        "email": {
+        "name": {
           "type": "string"
         },
-        "name": {
+        "email": {
           "type": "string"
         },
         "age": {
           "type": "integer"
-        },
-        "created_at": {
-          "type": "string"
-        },
-        "updated_at": {
-          "type": "string"
         }
-      },
-      "additionalProperties": false
+      }
     }
   }
 }
