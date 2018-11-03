@@ -20,18 +20,14 @@ RSpec.describe "Users", type: :request do
   before do
     create_list(:user, 3)
   end
-  # describe "GET /users" do
-  #   subject { get '/api/v1/users' }
-  #   it "response success" do
-  #     subject
-  #     expect(response).to have_http_status(200)
-  #   end
+  describe "GET /users" do
+    subject { get '/api/v1/users' }
 
-  #   it 'response schema is correct' do
-  #     subject
-  #     assert_schema_conform
-  #   end
-  # end
+    it 'response schema is correct' do
+      subject
+      assert_schema_conform
+    end
+  end
 
   describe "GET /users:id" do
     let(:user) { User.first }
