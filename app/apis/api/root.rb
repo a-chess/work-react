@@ -5,6 +5,6 @@ module API
 
     
     mount API::V1::Root
-    add_swagger_documentation
+    # add_swagger_documentation
   end
 end

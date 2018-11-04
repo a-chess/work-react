@@ -15,9 +15,9 @@ gem 'webpacker'
 gem 'react-rails'
 gem 'haml-rails'
 gem 'grape'
-gem 'grape-swagger'
-gem 'grape-swagger-rails'
 gem 'annotate'
+gem 'devise'
+gem 'active_model_serializers'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

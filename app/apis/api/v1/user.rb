@@ -3,13 +3,13 @@ module API
     class User < Grape::API
       
       resource :users do
-        desc 'return users'
+        # desc 'return users'
         get do
           ::User.all
         end
 
         #ID単一取得
-        desc "return a user"
+        # desc "return a user"
         params do
           requires :id, type: Integer
         end

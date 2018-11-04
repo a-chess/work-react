@@ -4,5 +4,4 @@ Rails.application.routes.draw do
   get 'home/show'
 
   mount API::Root => '/'
-  mount GrapeSwaggerRails::Engine => '/docs'
 end
