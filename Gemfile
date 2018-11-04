@@ -19,6 +19,8 @@ gem 'annotate'
 
 # 認証関連
 gem 'devise'
+gem 'devise_token_auth'
+gem 'omniauth'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
