@@ -8,13 +8,13 @@ RSpec.describe "Users", type: :request do
     @committee_schema ||=
       begin
         driver = Committee::Drivers::OpenAPI2.new
-        schema = JSON.parse(YAML::load(File.read(schema_path)).to_json)
+        schema = JSON.parse(File.read(schema_path))
         driver.parse(schema)
       end
   end
 
   def schema_path
-    Rails.root.join('docs','schema','schema.yaml') 
+    Rails.root.join('docs','schema','schema.json') 
   end
 
   before do

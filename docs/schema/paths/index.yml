@@ -1,0 +1,8 @@
+/users:
+  $ref: ./users/users.yml
+/users/{userId}:
+  $ref: ./users/user.yml
+/books:
+  $ref: ./books/books.yml
+/books/{bookId}:
+  $ref: ./books/book.yml

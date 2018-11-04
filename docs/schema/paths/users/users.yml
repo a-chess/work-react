@@ -1,0 +1,15 @@
+get:
+  tags:
+    - user
+  summary: 全てのUserを取得
+  description: ''
+  operationId: getUsers
+  produces:
+    - appication/json
+  responses:
+    '200':
+      description: successful operation
+      schema:
+        type: array
+        items:
+          $ref: '#/definitions/User'
