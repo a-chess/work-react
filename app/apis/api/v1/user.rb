@@ -3,6 +3,10 @@ module API
     class User < Grape::API
       
       resource :users do
+        before do
+          # authenticate_user！
+        end
+
         # desc 'return users'
         get do
           ::User.all

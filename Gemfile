@@ -16,8 +16,11 @@ gem 'react-rails'
 gem 'haml-rails'
 gem 'grape'
 gem 'annotate'
+
+# 認証関連
 gem 'devise'
-gem 'active_model_serializers'
+gem 'doorkeeper'
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
