@@ -30,13 +30,6 @@ module WorkReact
       g.fixture_replacement :factory_bot, dir: 'spec/factories'
       
     end
-
-    config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
-      allow do
-        origins '*'
-        resource '*', :headers => :any, :methods => [:get, :post, :options, :patch, :put, :delete]
-      end
-    end
     
   end
 end

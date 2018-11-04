@@ -41,7 +41,5 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
 
-    add_foreign_key :oauth_access_tokens, :users, column: :resource_owner_id
-    add_foreign_key :oauth_access_grants, :users, column: :resource_owner_id
   end
 end

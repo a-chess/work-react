@@ -19,8 +19,6 @@ gem 'annotate'
 
 # 認証関連
 gem 'devise'
-gem 'doorkeeper'
-gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
