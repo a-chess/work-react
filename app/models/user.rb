@@ -29,10 +29,25 @@
 #
 
 class User < ApplicationRecord
+  # include Swagger::UserSchema
+  include Swagger::Blocks
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   include DeviseTokenAuth::Concerns::User
 
   has_many :purchased_books, dependent: :destroy
   has_many :books, through: :purchased_books
+
+
+  swagger_schema :User do
+    key :required, [:id, :name]
+    property :id do
+      key :type, :integer
+      key :format, :int64
+    end
+    property :name do
+      key :type, :string
+    end
+  end
 end
