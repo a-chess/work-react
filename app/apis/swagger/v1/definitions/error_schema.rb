@@ -1,5 +1,4 @@
-class Swagger::ErrorSchema
-  extend ActiveSupport::Concern
+class Swagger::V1::Definitions::ErrorSchema
   include Swagger::Blocks
 
   swagger_schema :ErrorOutput do

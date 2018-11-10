@@ -1,4 +1,4 @@
-class Swagger::UsersApi
+class Swagger::V1::Paths::UsersApi
   extend ActiveSupport::Concern
   include Swagger::Blocks
 
@@ -30,7 +30,7 @@ class Swagger::UsersApi
           key :'$ref', :ErrorOutput
         end
       end
-      extend Swagger::ErrorResponses::NotFoundError
+      extend Swagger::V1::Paths::ErrorResponses::NotFoundError
     end
   end
 end

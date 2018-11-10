@@ -1,4 +1,4 @@
-module Swagger::ErrorResponses
+module Swagger::V1::Paths::ErrorResponses
   module NotFoundError
     def self.extended(base)
       base.response 404 do

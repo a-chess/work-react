@@ -1,41 +1,22 @@
 class ApidocsController < ApplicationController
+  extend ActiveSupport::Concern
   include Swagger::Blocks
 
   swagger_root do
     key :swagger, '2.0'
-    info do
-      key :version, '1.0.0'
-      key :title, 'Swagger Petstore'
-      key :description, 'A sample API that uses a petstore as an example to ' \
-                        'demonstrate features in the swagger-2.0 specification'
-      key :termsOfService, 'http://helloreverb.com/terms/'
-      contact do
-        key :name, 'Wordnik API Team'
-      end
-      license do
-        key :name, 'MIT'
-      end
-    end
-    tag do
-      key :name, 'user'
-      key :description, 'Pets operations'
-      externalDocs do
-        key :description, 'Find more info here'
-        key :url, 'https://swagger.io'
-      end
-    end
+    extend Swagger::V1::Info
+    extend Swagger::V1::Tag
     key :host, 'petstore.swagger.wordnik.com'
     key :basePath, '/api'
     key :consumes, ['application/json']
     key :produces, ['application/json']
   end
 
-
   SWAGGERED_CLASSES = [
-    Swagger::UsersApi,
-    Swagger::UserSchema,
-    Swagger::ErrorSchema,
-    self,
+    Swagger::V1::Paths::UsersApi,
+    Swagger::V1::Definitions::UserSchema,
+    Swagger::V1::Definitions::ErrorSchema,
+    self
   ].freeze
 
   def index

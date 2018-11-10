@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: users
@@ -29,14 +27,10 @@
 #
 
 class User < ApplicationRecord
-  # include Swagger::UserSchema
-  # include Swagger::Blocks
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   include DeviseTokenAuth::Concerns::User
 
   has_many :purchased_books, dependent: :destroy
   has_many :books, through: :purchased_books
-
 end

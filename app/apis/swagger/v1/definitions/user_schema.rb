@@ -1,9 +1,8 @@
-class Swagger::UserSchema
-  extend ActiveSupport::Concern
+class Swagger::V1::Definitions::UserSchema
   include Swagger::Blocks
 
   swagger_schema :User do
-    key :required, [:name, :email]
+    key :required, %i[name email]
     property :name do
       key :type, :string
     end
@@ -11,5 +10,4 @@ class Swagger::UserSchema
       key :type, :string
     end
   end
-  
 end
