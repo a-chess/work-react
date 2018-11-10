@@ -1,7 +1,19 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'factory_bot_rails'
+
+ActiveRecord::Base.transaction do
+  books = FactoryBot.create_list(:book,50)
+  users = FactoryBot.create_list(:user,10)
+
+  id = 0
+  users.each do |user|
+    id += 1
+    FactoryBot.create(:purchased_book, user: user, book_id: id)
+    id += 1
+    FactoryBot.create(:purchased_book, user: user, book_id: id)
+    id += 1
+    FactoryBot.create(:purchased_book, user: user, book_id: id)
+  end
+end
+
+
+
