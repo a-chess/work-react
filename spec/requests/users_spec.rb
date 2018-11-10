@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :request do
+RSpec.describe "Users", type: :request do
   include Committee::Test::Methods
   include Rack::Test::Methods
 
@@ -16,13 +14,13 @@ RSpec.describe 'Users', type: :request do
   end
 
   def schema_path
-    Rails.root.join('docs', 'schema', 'schema.json')
+    Rails.root.join('docs','schema','schema.json') 
   end
 
   before do
     create_list(:user, 3)
   end
-  describe 'GET /users' do
+  describe "GET /users" do
     subject { get '/api/v1/users' }
 
     it 'response schema is correct' do
@@ -31,9 +29,9 @@ RSpec.describe 'Users', type: :request do
     end
   end
 
-  describe 'GET /users:id' do
+  describe "GET /users:id" do
     let(:user) { User.first }
-    it 'response success' do
+    it "response success" do
       get "/api/v1/users/#{user.id}"
       assert_schema_conform
     end
