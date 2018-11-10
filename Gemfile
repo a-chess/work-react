@@ -20,7 +20,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 
 # 認証関連
-gem 'annotate'
 gem 'devise'
 gem 'devise_token_auth'
 gem 'omniauth'
