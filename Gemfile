@@ -9,7 +9,7 @@ gem 'annotate'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'devise_token_auth'
-# gem 'grape'
+gem 'grape'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'mysql2'

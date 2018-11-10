@@ -32,13 +32,13 @@ class ApidocsController < ApplicationController
 
 
   SWAGGERED_CLASSES = [
-    Api::V1::UsersController,
-    User,
+    Swagger::UsersApi,
+    Swagger::UserSchema,
+    Swagger::ErrorSchema,
     self,
   ].freeze
 
   def index
     render json: Swagger::Blocks.build_root_json(SWAGGERED_CLASSES)
-    # render json: { swaggerdocs: 'index'}
   end
 end
