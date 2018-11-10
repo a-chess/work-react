@@ -1,4 +1,0 @@
-User:
-  $ref: ./user.yml
-Book:
-  $ref: ./book.yml

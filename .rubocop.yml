@@ -9,6 +9,11 @@ AllCops:
 Metrics/BlockLength:
   Exclude:
     - "spec/**/*"
+    - "app/apis/**/*"
+
+Metrics/MethodLength:
+  Exclude:
+    - "app/apis/**/*"
 
 Metrics/LineLength:
   Exclude:
@@ -21,4 +26,10 @@ Style/Documentation:
   Enabled: false
 
 Style/AsciiComments:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
   Enabled: false
