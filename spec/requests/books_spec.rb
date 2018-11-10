@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # require 'rails_helper'
 
 # RSpec.describe "Books", type: :request do
@@ -14,7 +16,7 @@
 #   end
 
 #   def schema_path
-#     Rails.root.join('docs','schema','schema.yaml') 
+#     Rails.root.join('docs','schema','schema.yaml')
 #   end
 
 #   before do
