@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module API
   module V1
     class Root < Grape::API
@@ -11,8 +9,8 @@ module API
         authenticate_user!
       end
 
-      mount API::V1::User
-      mount API::V1::Book
+      mount API::V1::UsersApi
+      mount API::V1::BooksApi
     end
   end
 end

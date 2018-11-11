@@ -6,10 +6,11 @@ class ApidocsController < ApplicationController
     key :swagger, '2.0'
     extend Swagger::V1::Info
     extend Swagger::V1::Tag
-    key :host, 'petstore.swagger.wordnik.com'
-    key :basePath, '/api'
+    key :host, 'localhost:3000'
+    key :basePath, '/api/v1'
     key :consumes, ['application/json']
     key :produces, ['application/json']
+    key :schemes, ['http']
   end
 
   SWAGGERED_CLASSES = [

@@ -22,15 +22,51 @@
       }
     }
   ],
-  "host": "petstore.swagger.wordnik.com",
-  "basePath": "/api",
+  "host": "localhost:3000",
+  "basePath": "/api/v1",
   "consumes": [
     "application/json"
   ],
   "produces": [
     "application/json"
   ],
+  "schemes": [
+    "http"
+  ],
   "paths": {
+    "/users": {
+      "get": {
+        "summary": "全ユーザーを取得する",
+        "description": "全ユーザーを取得する",
+        "operationId": "getAllUsers",
+        "tags": [
+          "user"
+        ],
+        "responses": {
+          "200": {
+            "description": "全てのユーザー情報を取得する",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/ErrorOutput"
+            }
+          },
+          "404": {
+            "description": "Resource not found",
+            "schema": {
+              "$ref": "#/definitions/ErrorOutput"
+            }
+          }
+        }
+      }
+    },
     "/users/{id}": {
       "get": {
         "summary": "Find User by ID",
