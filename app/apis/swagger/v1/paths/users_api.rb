@@ -10,14 +10,6 @@ class Swagger::V1::Paths::UsersApi
       key :tags, [
         'user'
       ]
-      # parameter do
-      #   key :name, :id
-      #   key :in, :path
-      #   key :description, 'ID of user to fetch'
-      #   key :required, true
-      #   key :type, :integer
-      #   key :format, :int64
-      # end
       response 200 do
         key :description, '全てのユーザー情報を取得する'
         schema do
