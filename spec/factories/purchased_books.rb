@@ -13,5 +13,7 @@
 
 FactoryBot.define do
   factory :purchased_book do
+    user { user }
+    book { book }
   end
 end

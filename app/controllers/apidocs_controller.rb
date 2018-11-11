@@ -16,6 +16,7 @@ class ApidocsController < ApplicationController
   SWAGGERED_CLASSES = [
     Swagger::V1::Paths::UsersApi,
     Swagger::V1::Definitions::UserSchema,
+    Swagger::V1::Definitions::BookSchema,
     Swagger::V1::Definitions::ErrorSchema,
     self
   ].freeze
