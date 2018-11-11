@@ -2,11 +2,11 @@
 
 module API
   module V1
-    class User < Grape::API
+    class UsersApi < Grape::API
       resource :users do
-        # desc 'return users'
+        
         get do
-          ::User.all
+          User.all
         end
 
         route_param :user_id do
@@ -25,12 +25,12 @@ module API
           end
 
           get do
-            ::User.find(params[:user_id])
+            User.find(params[:user_id])
           end
 
           resource :books do
             get do
-              ::User.find(params[:user_id]).books
+              User.find(params[:user_id]).books
             end
           end
         end

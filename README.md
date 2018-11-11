@@ -3,7 +3,7 @@
 ## swagger.json
 ローカルでサーバー起動後に以下のコマンドを実行
 ```
-curl localhost:3000/apidocs | jq  . > docs/api-schema/schema.json
+curl localhost:3000/apidocs | jq  . > docs/api/schema.json
 ```
 
 ## erd
